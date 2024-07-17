@@ -20,7 +20,10 @@ Route::get('/jobs/create', function () {
 });
 
 Route::post('/jobs', function () {
-    //validation
+    request()->validate([
+        'title' => 'required',
+        'salary' => 'required'
+    ]);
 
     //created job
     Job::create([
