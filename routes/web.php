@@ -13,6 +13,7 @@ Route::get('/jobs/{job}', 'App\Http\Controllers\JobController@show');
 Route::get('/jobs/{job}/edit', 'App\Http\Controllers\JobController@edit')
     ->middleware('auth:web')
     ->can('edit', 'job');
+
 Route::patch('/jobs/{job}', 'App\Http\Controllers\JobController@update');
 Route::delete('/jobs/{job}', 'App\Http\Controllers\JobController@destroy');
 
